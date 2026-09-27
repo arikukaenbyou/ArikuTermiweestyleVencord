@@ -165,6 +165,14 @@ const css = `/**
 :root {
   --anvil-font: 'Fira Code', 'JetBrains Mono', monospace;
   --anvil-font-code: 'JetBrains Mono', 'Fira Code', monospace;
+  /* text size: x-height as a fraction of the font size. Monospace fonts run wider than
+     Discord's gg sans, so they are scaled down to ~90 % (Fira Code alone is 0.527);
+     'none' = Discord's own sizes, a bigger number = bigger text */
+  --anvil-font-size-adjust: 0.475;
+}
+
+html {
+  font-size-adjust: var(--anvil-font-size-adjust);
 }
 
 :root:root {

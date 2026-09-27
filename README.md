@@ -26,6 +26,7 @@ Put this in QuickCSS (Vencord → Settings → Themes → Edit QuickCSS):
 :root {
   --anvil-font: 'gg sans', sans-serif;       /* back to Discord's UI font */
   --anvil-font-code: 'JetBrains Mono', monospace;
+  --anvil-font-size-adjust: 0.5;             /* text size, default 0.475; none = Discord's sizes */
 }
 ```
 
@@ -71,7 +72,8 @@ JetBrains Mono w kodzie i czarne tło bloków kodu. Ta sama paleta co motyw XFCE
 - **Instalacja:** Vencord → Ustawienia → Motywy → Motywy online, wklej link:
   `https://raw.githubusercontent.com/arikukaenbyou/ArikuTermiweestyleVencord/main/AnvilTerminal.theme.css`
   Motyw sam się aktualizuje z tego repo. Działa z ciemnymi motywami Discorda (Ciemny, Ciemniejszy, Północ).
-- **Czcionki** zmienisz w QuickCSS przez `--anvil-font` i `--anvil-font-code` (przykład wyżej).
+- **Czcionki** zmienisz w QuickCSS przez `--anvil-font` i `--anvil-font-code`, a ich wielkość przez
+  `--anvil-font-size-adjust` (domyślnie 0.475, czyli ok. 90%; `none` = rozmiary Discorda). Przykład wyżej.
 - **Jak to działa:** motyw nie opiera się na nazwach klas, tylko na zmiennych kolorów Discorda.
   Skala „blurple” dostaje zielony odcień przy zachowanej jasności, więc kontrasty zostają takie,
   jak zaprojektował je Discord. Testy co tydzień sprawdzają, czy Discord nie zmienił nazw zmiennych.
