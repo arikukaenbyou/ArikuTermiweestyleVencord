@@ -1,0 +1,12 @@
+{
+  "name": "ariku-termiweestyle-vencord",
+  "version": "1.0.0",
+  "private": true,
+  "description": "AnvilTerminal theme for Vencord/Vesktop",
+  "license": "MIT",
+  "type": "module",
+  "scripts": {
+    "build": "node build.mjs",
+    "test": "node --test tests/theme.test.mjs"
+  }
+}
