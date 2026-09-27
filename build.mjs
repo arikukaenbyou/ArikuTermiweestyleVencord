@@ -169,6 +169,9 @@ const css = `/**
      Discord's gg sans, so they are scaled down to ~90 % (Fira Code alone is 0.527);
      'none' = Discord's own sizes, a bigger number = bigger text */
   --anvil-font-size-adjust: 0.475;
+  /* ring around servers (and folders) where someone is in voice or streaming;
+     set to transparent to turn it off */
+  --anvil-voice-ring: ${C.accent};
 }
 
 html {
@@ -187,6 +190,15 @@ ${opacity}
 /* doubled for specificity: wins over Discord's .theme-dark whatever the load order */
 :is(.theme-dark, .theme-darker, .theme-midnight):is(.theme-dark, .theme-darker, .theme-midnight) {
 ${tokens}
+}
+
+/* ---- servers with people in voice: green ring ----
+   Discord marks them with the upper badge (speaker / screen icon) next to the icon; the ring
+   follows the icon's own rounded shape (drop-shadow on its SVG mask). Class hashes change,
+   so only the stable prefixes are matched. */
+[class*='blobContainer_'] > [class*='wrapper_']:has(> [class*='upperBadge_']) > svg {
+  filter: drop-shadow(2px 0 0 var(--anvil-voice-ring)) drop-shadow(-2px 0 0 var(--anvil-voice-ring))
+    drop-shadow(0 2px 0 var(--anvil-voice-ring)) drop-shadow(0 -2px 0 var(--anvil-voice-ring));
 }
 
 /* ---- a few terminal touches ---- */

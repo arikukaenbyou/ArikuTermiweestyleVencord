@@ -3,6 +3,7 @@
 **AnvilTerminal for Discord**: terminal-green accents on VS Code grey, Fira Code for the UI and
 JetBrains Mono for code, code blocks on a black terminal. The Discord side of
 [ArikuTermiweestyleXfce](https://github.com/arikukaenbyou/ArikuTermiweestyleXfce) (same palette).
+Servers (and folders) where someone is in voice or streaming get a **green ring**.
 For [Vencord](https://vencord.dev) / [Vesktop](https://github.com/Vencord/Vesktop); works in BetterDiscord too.
 
 ## Install (Online Themes)
@@ -27,6 +28,7 @@ Put this in QuickCSS (Vencord → Settings → Themes → Edit QuickCSS):
   --anvil-font: 'gg sans', sans-serif;       /* back to Discord's UI font */
   --anvil-font-code: 'JetBrains Mono', monospace;
   --anvil-font-size-adjust: 0.5;             /* text size, default 0.475; none = Discord's sizes */
+  --anvil-voice-ring: transparent;           /* no green ring on servers with people in voice */
 }
 ```
 
@@ -72,6 +74,8 @@ JetBrains Mono w kodzie i czarne tło bloków kodu. Ta sama paleta co motyw XFCE
 - **Instalacja:** Vencord → Ustawienia → Motywy → Motywy online, wklej link:
   `https://raw.githubusercontent.com/arikukaenbyou/ArikuTermiweestyleVencord/main/AnvilTerminal.theme.css`
   Motyw sam się aktualizuje z tego repo. Działa z ciemnymi motywami Discorda (Ciemny, Ciemniejszy, Północ).
+- **Zielona obwódka** oznacza serwery i foldery, na których ktoś jest na voice albo streamuje
+  (wyłączysz ją przez `--anvil-voice-ring: transparent`).
 - **Czcionki** zmienisz w QuickCSS przez `--anvil-font` i `--anvil-font-code`, a ich wielkość przez
   `--anvil-font-size-adjust` (domyślnie 0.475, czyli ok. 90%; `none` = rozmiary Discorda). Przykład wyżej.
 - **Jak to działa:** motyw nie opiera się na nazwach klas, tylko na zmiennych kolorów Discorda.

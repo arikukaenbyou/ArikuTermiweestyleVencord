@@ -39,6 +39,12 @@ test('CSS is balanced and only imports what Vencord allows', () => {
   assert.ok(!/!important/.test(body), 'tokens only -- no !important')
 })
 
+test('selectors use stable class prefixes only (hashes change with every Discord build)', () => {
+  const body = css.replace(/\/\*[\s\S]*?\*\//g, '')
+  assert.deepEqual(body.match(/\.[a-zA-Z]+_[a-f0-9]{5,6}\b/g) || [], [])
+  assert.match(body, /\[class\*='upperBadge_'\]/, 'voice ring rule missing')
+})
+
 test('the whole blurple ramp is recoloured', () => {
   for (let n = 1; n <= 99; n++) assert.match(css, new RegExp(`--blurple-${n}-hsl: 145 `))
 })

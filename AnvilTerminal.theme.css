@@ -1,7 +1,7 @@
 /**
  * @name AnvilTerminal
  * @author arikukaenbyou
- * @version 1.1.0
+ * @version 1.2.0
  * @description Terminal-green on VS Code grey -- the AnvilTerminal desktop theme for Discord. Dark themes only.
  * @source https://github.com/arikukaenbyou/ArikuTermiweestyleVencord
 */
@@ -18,6 +18,9 @@
      Discord's gg sans, so they are scaled down to ~90 % (Fira Code alone is 0.527);
      'none' = Discord's own sizes, a bigger number = bigger text */
   --anvil-font-size-adjust: 0.475;
+  /* ring around servers (and folders) where someone is in voice or streaming;
+     set to transparent to turn it off */
+  --anvil-voice-ring: #00ff66;
 }
 
 html {
@@ -244,6 +247,15 @@ html {
   --status-danger: #ff3b3b;
   --ansi-green: #00ff66;
   --ansi-bright-green: #51ff77;
+}
+
+/* ---- servers with people in voice: green ring ----
+   Discord marks them with the upper badge (speaker / screen icon) next to the icon; the ring
+   follows the icon's own rounded shape (drop-shadow on its SVG mask). Class hashes change,
+   so only the stable prefixes are matched. */
+[class*='blobContainer_'] > [class*='wrapper_']:has(> [class*='upperBadge_']) > svg {
+  filter: drop-shadow(2px 0 0 var(--anvil-voice-ring)) drop-shadow(-2px 0 0 var(--anvil-voice-ring))
+    drop-shadow(0 2px 0 var(--anvil-voice-ring)) drop-shadow(0 -2px 0 var(--anvil-voice-ring));
 }
 
 /* ---- a few terminal touches ---- */
