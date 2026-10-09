@@ -2,6 +2,7 @@ name: tests
 on:
   push:
   pull_request:
+  workflow_dispatch:
   schedule:
     - cron: '17 6 * * 1'  # weekly: Discord renames tokens now and then
 jobs:
