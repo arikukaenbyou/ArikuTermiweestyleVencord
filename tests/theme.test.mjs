@@ -47,7 +47,7 @@ test('selectors use stable class prefixes only (hashes change with every Discord
 })
 
 test('compact layout scales the whole app and narrows the member sidebar', () => {
-  assert.match(css, /--anvil-ui-scale:\s*0\.85;/)
+  assert.match(css, /--anvil-ui-scale:\s*0\.9;/)
   assert.match(css, /zoom:\s*var\(--anvil-ui-scale\)/)
   assert.match(css, /--anvil-member-list-width:\s*200px;/)
   assert.match(css, /flex:\s*0 0 var\(--anvil-member-list-width\)/)

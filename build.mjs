@@ -166,7 +166,7 @@ const css = `/**
   --anvil-font: 'Fira Code', 'JetBrains Mono', monospace;
   --anvil-font-code: 'JetBrains Mono', 'Fira Code', monospace;
   /* scale the whole Discord app without changing browser zoom */
-  --anvil-ui-scale: 0.85;
+  --anvil-ui-scale: 0.9;
   /* member sidebar before app scaling */
   --anvil-member-list-width: 200px;
   /* text size: x-height as a fraction of the font size. 0.53 keeps Fira Code close to
