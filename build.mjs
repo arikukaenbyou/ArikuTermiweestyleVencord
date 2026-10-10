@@ -165,6 +165,10 @@ const css = `/**
 :root {
   --anvil-font: 'Fira Code', 'JetBrains Mono', monospace;
   --anvil-font-code: 'JetBrains Mono', 'Fira Code', monospace;
+  /* scale the whole Discord app without changing browser zoom */
+  --anvil-ui-scale: 0.9;
+  /* member sidebar before app scaling */
+  --anvil-member-list-width: 200px;
   /* text size: x-height as a fraction of the font size. 0.53 keeps Fira Code close to
      Discord's nominal font size; 'none' disables adjustment, a bigger number = bigger text */
   --anvil-font-size-adjust: 0.53;
@@ -174,6 +178,7 @@ const css = `/**
 }
 
 html {
+  zoom: var(--anvil-ui-scale);
   font-size-adjust: var(--anvil-font-size-adjust);
 }
 
@@ -189,6 +194,19 @@ ${opacity}
 /* doubled for specificity: wins over Discord's .theme-dark whatever the load order */
 :is(.theme-dark, .theme-darker, .theme-midnight):is(.theme-dark, .theme-darker, .theme-midnight) {
 ${tokens}
+}
+
+/* ---- compact member sidebar ----
+   Match Discord's stable class prefixes, not build-specific class hashes. */
+[class*='membersWrap_'] {
+  flex: 0 0 var(--anvil-member-list-width);
+  min-width: var(--anvil-member-list-width);
+  width: var(--anvil-member-list-width);
+}
+
+[class*='membersWrap_'] [class*='members_'] {
+  min-width: 0;
+  width: 100%;
 }
 
 /* ---- servers with people in voice: green ring ----

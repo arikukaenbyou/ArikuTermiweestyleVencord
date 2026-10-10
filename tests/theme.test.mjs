@@ -43,6 +43,14 @@ test('selectors use stable class prefixes only (hashes change with every Discord
   const body = css.replace(/\/\*[\s\S]*?\*\//g, '')
   assert.deepEqual(body.match(/\.[a-zA-Z]+_[a-f0-9]{5,6}\b/g) || [], [])
   assert.match(body, /\[class\*='upperBadge_'\]/, 'voice ring rule missing')
+  assert.match(body, /\[class\*='membersWrap_'\]/, 'compact member sidebar rule missing')
+})
+
+test('compact layout scales the whole app and narrows the member sidebar', () => {
+  assert.match(css, /--anvil-ui-scale:\s*0\.9;/)
+  assert.match(css, /zoom:\s*var\(--anvil-ui-scale\)/)
+  assert.match(css, /--anvil-member-list-width:\s*200px;/)
+  assert.match(css, /flex:\s*0 0 var\(--anvil-member-list-width\)/)
 })
 
 test('the whole blurple ramp is recoloured', () => {
