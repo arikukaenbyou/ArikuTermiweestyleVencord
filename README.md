@@ -27,7 +27,7 @@ Put this in QuickCSS (Vencord → Settings → Themes → Edit QuickCSS):
 :root {
   --anvil-font: 'gg sans', sans-serif;       /* back to Discord's UI font */
   --anvil-font-code: 'JetBrains Mono', monospace;
-  --anvil-ui-scale: 0.9;                    /* whole app scale */
+  --anvil-ui-scale: 0.7;                    /* whole app scale */
   --anvil-member-list-width: 200px;         /* right-hand member panel */
   --anvil-font-size-adjust: 0.55;            /* text size, default 0.53; none = Discord's sizes */
   --anvil-voice-ring: transparent;           /* no green ring on servers with people in voice */
@@ -38,7 +38,7 @@ Put this in QuickCSS (Vencord → Settings → Themes → Edit QuickCSS):
 
 Instead of hashed class names, it overrides Discord's own design tokens, which change far less often:
 
-- a configurable **0.9 app scale** makes the whole interface more compact, and a **200px member-list width**
+- a configurable **0.7 app scale** makes the whole interface more compact, and a **200px member-list width**
   trims the right-hand sidebar; both can be adjusted in QuickCSS;
 - the **brand ramp** (`--blurple-1…99`) keeps Discord's saturation and lightness per step but gets the
   green hue, so buttons, switches, mentions, unread pills and focus rings all turn green with the
@@ -80,7 +80,7 @@ JetBrains Mono w kodzie i czarne tło bloków kodu. Ta sama paleta co motyw XFCE
   Motyw sam się aktualizuje z tego repo. Działa z ciemnymi motywami Discorda (Ciemny, Ciemniejszy, Północ).
 - **Zielona obwódka** oznacza serwery i foldery, na których ktoś jest na voice albo streamuje
   (wyłączysz ją przez `--anvil-voice-ring: transparent`).
-- **Kompaktowy układ:** skala całej aplikacji to `--anvil-ui-scale` (domyślnie `0.9`), a szerokość
+- **Kompaktowy układ:** skala całej aplikacji to `--anvil-ui-scale` (domyślnie `0.7`), a szerokość
   prawego panelu członków to `--anvil-member-list-width` (domyślnie `200px`); zmienisz je w QuickCSS.
 - **Porządek serwerów:** motyw nie może tworzyć folderów ani zmieniać kolejności za Ciebie — to ustawienia
   konta Discord. Przeciągnij „Anvil of Suns | ariku.pl” na pierwszą pozycję poza folderami, a pozostałe
