@@ -27,7 +27,7 @@ Put this in QuickCSS (Vencord → Settings → Themes → Edit QuickCSS):
 :root {
   --anvil-font: 'gg sans', sans-serif;       /* back to Discord's UI font */
   --anvil-font-code: 'JetBrains Mono', monospace;
-  --anvil-font-size-adjust: 0.5;             /* text size, default 0.475; none = Discord's sizes */
+  --anvil-font-size-adjust: 0.55;            /* text size, default 0.53; none = Discord's sizes */
   --anvil-voice-ring: transparent;           /* no green ring on servers with people in voice */
 }
 ```
@@ -77,7 +77,7 @@ JetBrains Mono w kodzie i czarne tło bloków kodu. Ta sama paleta co motyw XFCE
 - **Zielona obwódka** oznacza serwery i foldery, na których ktoś jest na voice albo streamuje
   (wyłączysz ją przez `--anvil-voice-ring: transparent`).
 - **Czcionki** zmienisz w QuickCSS przez `--anvil-font` i `--anvil-font-code`, a ich wielkość przez
-  `--anvil-font-size-adjust` (domyślnie 0.475, czyli ok. 90%; `none` = rozmiary Discorda). Przykład wyżej.
+  `--anvil-font-size-adjust` (domyślnie 0.53, czyli rozmiar zbliżony do nominalnego; `none` wyłącza korektę). Przykład wyżej.
 - **Jak to działa:** motyw nie opiera się na nazwach klas, tylko na zmiennych kolorów Discorda.
   Skala „blurple” dostaje zielony odcień przy zachowanej jasności, więc kontrasty zostają takie,
   jak zaprojektował je Discord. Testy co tydzień sprawdzają, czy Discord nie zmienił nazw zmiennych.
