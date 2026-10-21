@@ -46,11 +46,18 @@ test('selectors use stable class prefixes only (hashes change with every Discord
   assert.match(body, /\[class\*='membersWrap_'\]/, 'compact member sidebar rule missing')
 })
 
-test('compact layout scales the whole app and narrows the member sidebar', () => {
+test('compact layout scales the app and keeps Discord navigation in its standard rails', () => {
   assert.match(css, /--anvil-ui-scale:\s*0\.9;/)
   assert.match(css, /zoom:\s*var\(--anvil-ui-scale\)/)
-  assert.match(css, /--anvil-member-list-width:\s*200px;/)
+  assert.match(css, /--anvil-member-list-width:\s*220px;/)
   assert.match(css, /flex:\s*0 0 var\(--anvil-member-list-width\)/)
+  assert.match(css, /min-width:\s*var\(--anvil-member-list-width\)/)
+  assert.match(css, /background:\s*linear-gradient\(180deg,\s*#07150e/)
+  assert.doesNotMatch(css, /--anvil-right-rail-width|content:\s*'(?:LUDZIE|SERWERY)'/)
+  assert.doesNotMatch(css, /\[class\*='guilds_'\]:focus-within/)
+  assert.match(css, /\[class\*='sidebarList_'\] header/)
+  assert.match(css, /\[class\*='sidebarList_'\] \[class\*='containerDefault_'\]:has\(\[class\*='voiceUser_'\], \[class\*='voiceUsers_'\], \[class\*='modeConnected_'\]\)/)
+  assert.match(css, /\[class\*='membersGroup_'\]\s*{\s*color:\s*var\(--text-brand\)/)
 })
 
 test('the whole blurple ramp is recoloured', () => {

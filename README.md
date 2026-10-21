@@ -11,7 +11,7 @@ For [Vencord](https://vencord.dev) / [Vesktop](https://github.com/Vencord/Veskto
 Vencord → **Settings → Themes → Online Themes**, paste:
 
 ```
-https://raw.githubusercontent.com/arikukaenbyou/ArikuTermiweestyleVencord/main/AnvilTerminal.theme.css
+https://git.ariku.pl/ariku/ArikuTermiweestyleVencord/raw/branch/main/AnvilTerminal.theme.css
 ```
 
 It follows this repository, so fixes arrive by themselves. Use one of Discord's **dark** themes
@@ -28,7 +28,7 @@ Put this in QuickCSS (Vencord → Settings → Themes → Edit QuickCSS):
   --anvil-font: 'gg sans', sans-serif;       /* back to Discord's UI font */
   --anvil-font-code: 'JetBrains Mono', monospace;
   --anvil-ui-scale: 0.9;                    /* whole app scale */
-  --anvil-member-list-width: 200px;         /* right-hand member panel */
+  --anvil-member-list-width: 220px;         /* right-hand member list */
   --anvil-font-size-adjust: 0.55;            /* text size, default 0.53; none = Discord's sizes */
   --anvil-voice-ring: transparent;           /* no green ring on servers with people in voice */
 }
@@ -38,8 +38,10 @@ Put this in QuickCSS (Vencord → Settings → Themes → Edit QuickCSS):
 
 Instead of hashed class names, it overrides Discord's own design tokens, which change far less often:
 
-- a configurable **0.9 app scale** makes the whole interface more compact, and a **200px member-list width**
-  trims the right-hand sidebar; both can be adjusted in QuickCSS;
+- a configurable **0.9 app scale** makes the whole interface more compact, and a **220px member list** keeps
+  the standard Discord navigation layout intact; its width is adjustable in QuickCSS;
+- the channel header uses a darkened crop of Luneta's terminal boot splash, bundled in `assets/`, so it works
+  with online themes as well as local installs;
 - the **brand ramp** (`--blurple-1…99`) keeps Discord's saturation and lightness per step but gets the
   green hue, so buttons, switches, mentions, unread pills and focus rings all turn green with the
   contrast Discord designed for them;
@@ -76,12 +78,15 @@ JetBrains Mono w kodzie i czarne tło bloków kodu. Ta sama paleta co motyw XFCE
 [ArikuTermiweestyleXfce](https://github.com/arikukaenbyou/ArikuTermiweestyleXfce).
 
 - **Instalacja:** Vencord → Ustawienia → Motywy → Motywy online, wklej link:
-  `https://raw.githubusercontent.com/arikukaenbyou/ArikuTermiweestyleVencord/main/AnvilTerminal.theme.css`
+  `https://git.ariku.pl/ariku/ArikuTermiweestyleVencord/raw/branch/main/AnvilTerminal.theme.css`
   Motyw sam się aktualizuje z tego repo. Działa z ciemnymi motywami Discorda (Ciemny, Ciemniejszy, Północ).
 - **Zielona obwódka** oznacza serwery i foldery, na których ktoś jest na voice albo streamuje
   (wyłączysz ją przez `--anvil-voice-ring: transparent`).
-- **Kompaktowy układ:** skala całej aplikacji to `--anvil-ui-scale` (domyślnie `0.9`), a szerokość
-  prawego panelu członków to `--anvil-member-list-width` (domyślnie `200px`); zmienisz je w QuickCSS.
+- **Układ:** skala całej aplikacji to `--anvil-ui-scale` (domyślnie `0.9`), a szerokość listy członków to
+  `--anvil-member-list-width` (domyślnie `220px`). Standardowa lista serwerów pozostaje po lewej, a członkowie po prawej.
+- **Akcenty Lunety:** nagłówek serwera, aktywne kanały głosowe, lista serwerów i lista członków dostają subtelne zielone
+  detale terminala. W nagłówku kanałów jest przycięty splash `01-terminal-boot`; asset znajduje się w repozytorium,
+  więc działa także z motywem online. Panele konta i voice zostają na swoim miejscu, dzięki czemu nie zasłaniają obrazu podczas streamu.
 - **Porządek serwerów:** motyw nie może tworzyć folderów ani zmieniać kolejności za Ciebie — to ustawienia
   konta Discord. Przeciągnij „Anvil of Suns | ariku.pl” na pierwszą pozycję poza folderami, a pozostałe
   serwery grupuj w zwijane foldery, np. `GAMES`, `COMMUNITIES` i `PROJECTS`. Kolory folderów mogą oznaczać
